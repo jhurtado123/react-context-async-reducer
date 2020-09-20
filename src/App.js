@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import UsersTable from './components/UsersTable/UsersTable';
+import ActionsButtons from './components/ActionsButtons/ActionsButtons';
+
+import { UsersContextProvider } from './context/users/UsersContextProvider';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UsersContextProvider>
+      <div className="App">
+        <UsersTable />
+        <ActionsButtons />
+      </div>
+    </UsersContextProvider>
   );
 }
 
