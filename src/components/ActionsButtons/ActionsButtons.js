@@ -1,22 +1,25 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 
-import { clearUsers, fetchUsers } from '../../context/users/actions';
 import UsersContext from '../../context/users/context';
 
 function ActionsButtons() {
-  const [globalState, dispatch] = useContext(UsersContext);
+  const [globalState, actions] = useContext(UsersContext);
   const {
     users
   } = globalState;
+  const {
+    fetchUsers,
+    clearUsers
+  } = actions;
 
   const button = !users.length
     ? (
-      <button onClick={() => fetchUsers(dispatch)}>
+      <button onClick={() => fetchUsers()}>
         Fetch Users
       </button>
     )
     : (
-      <button onClick={() => clearUsers(dispatch)}>
+      <button onClick={() => clearUsers()}>
         Clear Users
       </button>
     );

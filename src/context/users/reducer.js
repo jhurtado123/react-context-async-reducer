@@ -2,7 +2,7 @@ import Constants from '../../constants';
 
 export const initialState = {
   users: [],
-  test: '222',
+  test: '222'
 };
 
 const usersReducer = (state, action) => {
